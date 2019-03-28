@@ -1,0 +1,2 @@
+class StoreUser < ApplicationRecord
+end

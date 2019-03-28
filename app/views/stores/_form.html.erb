@@ -1,0 +1,47 @@
+<%= form_with(model: store, local: true) do |form| %>
+  <% if store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+      <ul>
+      <% store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :store_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :store_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time %>
+    <%= form.datetime_select :opening_time, id: :store_opening_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time %>
+    <%= form.datetime_select :closing_time, id: :store_closing_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :store_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :store_latitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
