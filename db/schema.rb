@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190328081926) do
+ActiveRecord::Schema.define(version: 20190331081140) do
 
   create_table "banks", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20190328081926) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "exclusive"
   end
 
   create_table "users", force: :cascade do |t|
