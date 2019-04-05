@@ -1,8 +1,17 @@
+SimpleCov.start 'rails'
+
+require 'simplecov'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 require 'contexts'
+
+  # explicitly include all sets of contexts used for testing 
+require './test/sets/store_contexts'
+require './test/sets/user_contexts'
+require './test/sets/bank_contexts'
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class BanksControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @bank = banks(:one)
-  end
+    # create the objects I want with factories
+    setup do 
+      create_banks
+    end
+
 
   test "should get index" do
     get banks_url
@@ -17,30 +19,30 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bank" do
     assert_difference('Bank.count') do
-      post banks_url, params: { bank: { name: @bank.name } }
+      post banks_url, params: { bank: { name: @QIB.name } }
     end
 
     assert_redirected_to bank_url(Bank.last)
   end
 
   test "should show bank" do
-    get bank_url(@bank)
+    get bank_url(@QIB)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_bank_url(@bank)
+    get edit_bank_url(@QIB)
     assert_response :success
   end
 
   test "should update bank" do
-    patch bank_url(@bank), params: { bank: { name: @bank.name } }
-    assert_redirected_to bank_url(@bank)
+    patch bank_url(@QIB), params: { bank: { name: @QIB.name } }
+    assert_redirected_to bank_url(@QIB)
   end
 
   test "should destroy bank" do
     assert_difference('Bank.count', -1) do
-      delete bank_url(@bank)
+      delete bank_url(@QIB)
     end
 
     assert_redirected_to banks_url

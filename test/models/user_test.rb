@@ -19,14 +19,12 @@ class UserTest < ActiveSupport::TestCase
 
   context "Creating a context for user" do
     # create the objects I want with factories
-    setup do 
-      create_users
-    end
-    
-    # and provide a teardown method as well
-    teardown do
-      remove_users
-    end
+        def create_users
+            create_users
+        end
+        def remove_users
+            remove_users
+        end
   end
 
 end

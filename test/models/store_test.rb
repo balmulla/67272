@@ -6,15 +6,12 @@ class StoreTest < ActiveSupport::TestCase
   context "Creating a context for stores" do
     # create the objects I want with factories
     setup do 
-    #  create_stores
-            @CMU = FactoryBot.create(:store, name:"CMU", type:"Indian", opening_time:"1am", closing_time:"5pm", latitude:"34.50097", longitude:"-84.97533", exclusive: true)
-            @VCU = FactoryBot.create(:store, name:"VCU", type:"Arabic", opening_time:"11am", closing_time:"5pm", latitude:"34.50097", longitude:"-84.97533", exclusive: true)
-            @Texas = FactoryBot.create(:store, name:"Texas", type:"International", opening_time:"5pm", closing_time:"11pm", latitude:"34.50097", longitude:"-84.97533", exclusive: false)
-            @Breakfast_club = FactoryBot.create(:store, name:"CMU", type:"Chinese", opening_time:"8am", closing_time:"1pm", latitude:"34.50097", longitude:"-84.97533", exclusive: false)
+      create_stores
     end
     
     # and provide a teardown method as well
     teardown do
+      remove_stores
     end
   
 
@@ -31,6 +28,11 @@ class StoreTest < ActiveSupport::TestCase
   should "assert that the proper retaurants open for dinner" do
     assert @Texas.dinner?
   end
+  
+  should "have a scope 'exclusive' that works" do
+    assert_equal 2, Store.exclusive.size
+  end
+  
 
   end
 end
