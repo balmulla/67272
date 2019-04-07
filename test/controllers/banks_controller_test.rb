@@ -24,6 +24,13 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to bank_url(Bank.last)
   end
+  
+  test "should not create bank" do
+    assert_difference('Bank.count', 0) do
+      post banks_url, params: { bank: { name: nil } }
+    end
+
+  end
 
   test "should show bank" do
     get bank_url(@QIB)
@@ -38,6 +45,11 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
   test "should update bank" do
     patch bank_url(@QIB), params: { bank: { name: @QIB.name } }
     assert_redirected_to bank_url(@QIB)
+  end
+  
+  test "should not update bank" do
+    patch bank_url(@QIB), params: { bank: { name: nil } }
+    assert_equal(@QIB.name, "Qatar Islamic Bank")
   end
 
   test "should destroy bank" do
