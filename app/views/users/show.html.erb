@@ -1,29 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="text-align:center;">
   <strong>Bank:</strong>
   <%= @user.bank_id %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
 
-<p>
+<p style="text-align:center;">
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Phone:</strong>
   <%= @user.phone %>
 </p>
-
+<p style="text-align:center;">
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</p>

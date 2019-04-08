@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="text-align:center;">
   <strong>Name:</strong>
   <%= @store.name %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Kind:</strong>
   <%= @store.kind %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Opening time:</strong>
   <%= @store.opening_time %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Closing time:</strong>
   <%= @store.closing_time %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Longitude:</strong>
   <%= @store.longitude %>
 </p>
 
-<p>
+<p style="text-align:center;">
   <strong>Latitude:</strong>
   <%= @store.latitude %>
 </p>
-
+<p style="text-align:center;">
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>
+</p>
